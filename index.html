@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="https://awesome.himpfen.com/awesome-lists-icon.png" type="image/png">
+  <title>Awesome Lists for Travelers</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src='https://cdn.tailwindcss.com'></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="light bg-gray-100 text-gray-800 transition-colors duration-300">
+  
+<div class="container mx-auto py-10">
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="text-4xl font-bold">Awesome Lists for Travelers</h1>
+    <button id="toggleDarkMode" class="p-2 border rounded shadow">Toggle Dark Mode</button>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-4 mb-4">
+    <button onclick="showLists('all')" id="allTab" class="p-2 border rounded shadow bg-blue-500 text-white">All Lists</button>
+    <button onclick="showLists('favorites')" id="favoritesTab" class="p-2 border rounded shadow">Favorites</button>
+
+    <select id="categoryFilter" class="p-2 border rounded" onchange="filterLists()">
+      <option value="">All Categories</option>
+      <option value="Countries">Countries</option>
+    </select>
+
+    <select id="sortOptions" class="p-2 border rounded" onchange="sortLists()">
+      <option value="title">Sort by Title</option>
+      <option value="newest">Sort by Newest</option>
+    </select>
+  </div>
+
+  <div class="mb-4 flex justify-center">
+    <input id="searchInput" type="text" placeholder="Search Awesome Lists..." class="w-full max-w-lg p-3 border rounded-lg shadow focus:outline-none" oninput="filterLists()">
+  </div>
+
+  <div id="paginationControls" class="mb-4 flex justify-center"></div>
+
+  <div id="awesomeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</div>
+
+<footer class="mt-8 bg-gray-200 p-4 text-center">
+  <p class="text-sm">Copyright &copy; <a href="https://www.himpfen.com/" target="_blank" class="text-blue-600 hover:underline">Brandon Himpfen</a>. All Rights Reserved.</p>
+</footer>
+
+  <script  src="./script.js"></script>
+
+</body>
+</html>
